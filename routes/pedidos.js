@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const PedidoController = require('../controllers/PedidoController')
+const PedidoController = require("../controllers/pedidoController")
 
 /* listar produtos */
-router.get('/', PedidoController.index);
-router.get('/:id/produtos', PedidoController.showProducts);
+router.get("/", PedidoController.index);
+router.get("/:id/produtos", PedidoController.showProducts);
 
 module.exports = router;

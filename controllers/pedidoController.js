@@ -1,9 +1,9 @@
 
-const {Produto, Pedido} = require('../models')
+const {Produto, Pedido} = require("../models")
 const PedidoController = {
     index: async (req, res)=>{
             const pedidos = await Pedido.findAll();
-         return res.render('pedidos', {pedidos})
+         return res.render("pedidos", {pedidos})
     },
     showProducts: async (req, res)=>{
         const {id} = req.params;
@@ -14,14 +14,14 @@ const PedidoController = {
             },
             include:{
                  model: Produto,
-                 as:'itensPedido',
+                 as:"itensPedido",
                  required:true
             }
         })
 
         console.log(pedido)
         
-        return res.render('pedidosDetalhes', {pedido})
+        return res.render("pedidosDetalhes", {pedido})
     }
 }
 

@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.0.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 05-Maio-2020 às 22:34
--- Versão do servidor: 10.4.11-MariaDB
--- versão do PHP: 7.4.1
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -21,6 +12,10 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bookcrafty`
 --
+
+CREATE DATABASE `bookcrafty`;
+
+USE `bookcrafty`;
 
 -- --------------------------------------------------------
 
@@ -219,45 +214,28 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`) VALUES
-(1, 'anne', 'anne@mail.com', 'senha123'),
-(2, 'hendy teste update agora vai', 'hendy@mail.com', 'hendy teste update'),
-(3, 'vero', 'vero@mail.com', '123123'),
-(4, 'Evangeline', 'est.Mauris.eu@Etiam.org', '8'),
-(7, 'Cain', 'accumsan.interdum.libero@tempordiamdictum.net', '3'),
-(8, 'Cyrus', 'sagittis.felis.Donec@uterosnon.com', '2'),
-(9, 'Kirestin', 'Nunc.sed.orci@euenimEtiam.com', '4'),
-(10, 'Samuel', 'metus.Aliquam.erat@CuraeDonectincidunt.org', '1'),
-(11, 'Raymond', 'nulla.In@odio.edu', '5'),
-(12, 'Timon', 'egestas.Duis@Pellentesquetincidunttempus.ca', '2'),
-(13, 'Yetta', 'egestas@nibhvulputatemauris.ca', '7'),
-(14, 'Hall', 'risus.Donec@nuncnulla.ca', '8'),
-(15, 'Renee', 'cursus@duiSuspendisse.net', '2'),
-(16, 'Lester', 'massa.rutrum@fringilla.co.uk', '9'),
-(17, 'Bree', 'Praesent.eu.dui@conubianostraper.co.uk', '10'),
-(18, 'Stephen', 'velit.Cras@ridiculus.ca', '7'),
-(19, 'Harper', 'ante.dictum@dolordapibus.net', '10'),
-(20, 'Edan', 'mi.lorem.vehicula@Vivamuseuismodurna.net', '8'),
-(21, 'Ora', 'Integer.vulputate@liberoettristique.co.uk', '10'),
-(22, 'Gay', 'dapibus.quam.quis@placeratvelitQuisque.co.uk', '9'),
-(23, 'Bevis', 'accumsan.interdum.libero@odiovelest.org', '9'),
-(24, 'vinicius teste', 'vinicius@email.com', '123456'),
-(25, 'joão', 'joao@email.com', '123456'),
-(26, 'Teste 1', 'teste1@email.com', '123456'),
-(27, 'Teste 2', 'teste2@email.com', '223456'),
-(28, 'Teste 3', 'teste3@email.com', '223456'),
-(29, 'Teste 4', 'teste4@email.com', '123456');
+(1,'Richard Tozier','richie@email.com','123'),
+(2,'Edward Kaspbrak','eddie@email.com','123'),
+(3,'Beverly Marsh','bev@email.com','123'),
+(4,'Stanley Uris','stan@email.com','123'),
+(5,'William Denbrough','bill@email.com','123'),
+(6,'Michael Hanlon','mike@email.com','123'),
+(7,'Benjamin Hanscom','ben@email.com','123'),
+(8,'Kay McCall','kay@email.com','123'),
+(9,'Audra Phillips','audra@email.com','123'),
+(10,'Carole Danner','carole@email.com','123'),
+(11,'Thomas Rogan','tom@email.com','123'),
+(12,'Henry Bowers','henry@email.com','123'),
+(13,'Patrick Hockstetter','patrick@email.com','123'),
+(14,'Victor Criss','vic@email.com','123'),
+(15,'Reginald Huggins','belch@email.com','123'),
+(16,'Greta Bowie','greta@email.com','123'),
+(17,'Sally Mueller','sally@email.com','123'),
+(18,'Vincent Taliendo','boogers@email.com','123'),
+(19,'Georgie Denbrough','georgie@email.com','123'),
+(20,'Robert Gray','pennywise@email.com','123');
 
 -- --------------------------------------------------------
-
---
--- Estrutura da tabela `usuarios`
---
-
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(190) NOT NULL,
-  `cpf` varchar(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
@@ -319,13 +297,6 @@ ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Índices para tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `cpf` (`cpf`);
-
---
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -370,12 +341,6 @@ ALTER TABLE `produto`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas

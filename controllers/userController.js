@@ -1,23 +1,23 @@
-const { Usuario } = require('../models');
-const Sequelize =  require('sequelize')
+const { Usuario } = require("../models");
+const Sequelize =  require("sequelize")
 const Op = Sequelize.Op
 
 const UserController= {
     index: async (req, res)=>{
-            let { page=1 } = req.query
+            let { page = 1 } = req.query
         let {count:total, rows:users} = await Usuario.findAndCountAll({
-            limit:5,
+            limit: 5,
             offset: (page - 1) * 5
         });
 
         
         
         let totalPagina = Math.round(total/5)
-        return res.render('usuarios', {users, totalPagina})
+        return res.render("usuarios", {users, totalPagina})
     },
 
     create:(req, res)=>{
-        return res.render('cadastroUsuario')
+        return res.render("cadastroUsuario")
     },
     store: async (req, res)=>{
         const { nome, email , senha} = req.body;
@@ -30,7 +30,7 @@ const UserController= {
 
         console.log(resultado)
 
-        return res.redirect('/users')
+        return res.redirect("/users")
     },
 
     edit:async (req, res)=>{
@@ -38,7 +38,7 @@ const UserController= {
 
         const usuario = await Usuario.findByPk(id);
 
-        return res.render('editarUsuario', {usuario})
+        return res.render("editarUsuario", {usuario})
     },
     update: async (req, res)=>{
        const {id} = req.params;
@@ -57,7 +57,7 @@ const UserController= {
 
        console.log(resultado)
        
-       return res.redirect('/users')
+       return res.redirect("/users")
     },
 
     destroy:  async(req, res)=>{
@@ -71,7 +71,7 @@ const UserController= {
         
         console.log(resultado)
         
-        res.redirect('/users')
+        res.redirect("/users")
     },
 
     findById: async (req, res)=>{
@@ -84,7 +84,7 @@ const UserController= {
             }
         })
 
-        return res.render('viewUsuario', {user})
+        return res.render("viewUsuario", {user})
 
     },
     search: async (req, res)=>{
@@ -97,26 +97,26 @@ const UserController= {
                 }
             },
             order:[
-                ['id_usuario', 'ASC']
+                ["id_usuario", "ASC"]
             ]
             
         });
 
-        return res.render('usuarios', {users})
+        return res.render("usuarios", {users})
     },
 
     agregadoras: async (req, res)=>{
-        let total = await Usuario.sum('id_usuario');
+        let total = await Usuario.sum("id_usuario");
 
-        res.send("A som é: " + total)
+        res.send("A soma do id dos usuarios é: " + total)
     },
 
     bulkCreate: async (req, res)=>{
         const listaDeUsuarios = [
-            {nome:"Teste 1", email:'teste1@email.com', senha:'123456'},
-            {nome:"Teste 2", email:'teste2@email.com', senha:'223456'},
-            {nome:"Teste 3", email:'teste3@email.com', senha:'223456'},
-            {nome:"Teste 4", email:'teste4@email.com', senha:'123456'},
+            {nome:"Teste 1", email:"teste1@email.com", senha:"123456"},
+            {nome:"Teste 2", email:"teste2@email.com", senha:"123456"},
+            {nome:"Teste 3", email:"teste3@email.com", senha:"123456"},
+            {nome:"Teste 4", email:"teste4@email.com", senha:"123456"},
             
         ]
 

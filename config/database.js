@@ -1,9 +1,8 @@
-const config = {
-    username:'root',
-    password:'',
-    database:'bookcrafty',
-    host:'localhost',
-    dialect:'mysql'
-}
-
-module.exports = config
+module.exports = {
+    host: "localhost",
+    dialect: "mysql",
+    username: "root",
+    password: "",
+    port: 3306,
+    database: "bookcrafty",
+};
