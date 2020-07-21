@@ -1,6 +1,6 @@
 const { Usuario } = require("../models");
-const Sequelize =  require("sequelize")
-const Op = Sequelize.Op
+const Sequelize =  require("sequelize");
+const Op = Sequelize.Op;
 
 const UserController= {
     index: async (req, res)=>{
@@ -127,4 +127,4 @@ const UserController= {
     }
 }
 
-module.exports = UserController
+module.exports = UserController;

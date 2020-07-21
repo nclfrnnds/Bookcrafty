@@ -1,6 +1,5 @@
-const Sequelize = require("sequelize")
-const config = require("../config/database")
-const {Produto, Categoria} = require("../models")
+const {Produto, Categoria} = require("../models");
+
 const CategoriaController = {
     index: async (req, res)=>{
         const categorias = await Categoria.findAll();
@@ -25,4 +24,4 @@ const CategoriaController = {
 
 }
 
-module.exports = CategoriaController
+module.exports = CategoriaController;

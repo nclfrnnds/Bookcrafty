@@ -1,5 +1,5 @@
+const {Produto, Pedido} = require("../models");
 
-const {Produto, Pedido} = require("../models")
 const PedidoController = {
     index: async (req, res)=>{
             const pedidos = await Pedido.findAll();
@@ -25,4 +25,4 @@ const PedidoController = {
     }
 }
 
-module.exports = PedidoController
+module.exports = PedidoController;
